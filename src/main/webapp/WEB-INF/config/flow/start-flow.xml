@@ -7,7 +7,7 @@
         start-state="flow-start"
         >
 
-    <view-state id="flow-start" view="flow-start" >
+    <view-state id="flow-start" view="layouts/flow-start" >
         <transition to="next-state" on="continue" />
     </view-state>
 

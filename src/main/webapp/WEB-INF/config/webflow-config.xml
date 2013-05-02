@@ -12,10 +12,7 @@
 
     <!-- The registry of executable flow definitions -->
     <webflow:flow-registry id="flowRegistry" base-path="/WEB-INF/config/" flow-builder-services="builderServices">
-        <!--<webflow:flow-location-pattern value="flow/start-flow.xml" />-->
-            <webflow:flow-location path="flow/start-flow.xml" id="flow/start"/>
-        <webflow:flow-location path="flow/start-flow.xml" id="start/flow"/>
-        <webflow:flow-location path="flow/start-flow.xml" id="astart/flow"/>
+        <webflow:flow-location path="flow/start-flow.xml" id="flow/start"/>
     </webflow:flow-registry>
 
 
