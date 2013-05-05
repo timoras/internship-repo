@@ -16,6 +16,12 @@
             <artifactId>spring-web</artifactId>
             <version>3.1.1.RELEASE</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>14.0.1</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
@@ -26,7 +32,11 @@
             <artifactId>spring-webflow</artifactId>
             <version>2.3.1.RELEASE</version>
         </dependency>
-
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.2</version>
+        </dependency>
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
@@ -107,12 +117,12 @@
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>8.1.2.v20120308</version>
                 <!--<configuration>-->
-                    <!--<systemProperties>-->
-                        <!--<systemProperty>-->
-                            <!--<name>log4j.configuration</name>-->
-                            <!--<value>log4j-dev.properties</value>-->
-                        <!--</systemProperty>-->
-                    <!--</systemProperties>-->
+                <!--<systemProperties>-->
+                <!--<systemProperty>-->
+                <!--<name>log4j.configuration</name>-->
+                <!--<value>log4j-dev.properties</value>-->
+                <!--</systemProperty>-->
+                <!--</systemProperties>-->
                 <!--</configuration>-->
             </plugin>
         </plugins>

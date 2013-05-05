@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+<form class="form-horizontal" method="POST" th:object="${eventForm}">
+    <div class="control-group">
+        <label class="control-label" for="inputEvent">Select event</label>
+
+        <div class="controls">
+            <select id="inputEvent" th:field="*{id}">
+                <option th:each="sopt:${events}" th:value="${sopt.id}" th:text="${sopt.name}">
+                    Events
+                </option>
+            </select>
+        </div>
+        <label class="control-label" for="num">Number of tickets</label>
+
+        <div class="controls">
+            <input id="num" th:field="*{ticketsNumber}" type="text"/>
+
+            <div th:if="${#fields.hasErrors('ticketsNumber')}" th:errors="*{ticketsNumber}"></div>
+        </div>
+        <div class="controls">
+            <button type="submit" name="" class="btn">Submit</button>
+            <input type="hidden" name="_eventId" value="next"/>
+        </div>
+    </div>
+</form>
+</body>
+</html>

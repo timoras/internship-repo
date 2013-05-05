@@ -12,7 +12,7 @@
 
     <!-- The registry of executable flow definitions -->
     <webflow:flow-registry id="flowRegistry" base-path="/WEB-INF/config/" flow-builder-services="builderServices">
-        <webflow:flow-location path="flow/start-flow.xml" id="tickets/flow"/>
+        <webflow:flow-location path="flow/tickets.xml" id="tickets/flow"/>
     </webflow:flow-registry>
 
 
@@ -23,10 +23,11 @@
 
     <!--<bean name="flow/start" class="lt.timoras.webflow.sandbox.flow.SandBoxFlowHandler"/>-->
     <bean class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
-        <property name="order" value="1" />
-        <property name="flowRegistry" ref="flowRegistry" />
+        <property name="order" value="1"/>
+        <property name="flowRegistry" ref="flowRegistry"/>
     </bean>
-    <webflow:flow-builder-services id="builderServices" development="true" view-factory-creator="mvcViewFactoryCreator"/>
+    <webflow:flow-builder-services id="builderServices" development="true"
+                                   view-factory-creator="mvcViewFactoryCreator"/>
 
     <bean id="mvcViewFactoryCreator" class="org.springframework.webflow.mvc.builder.MvcViewFactoryCreator">
         <property name="viewResolvers" ref="viewResolver"/>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="
+        http://www.springframework.org/schema/webflow
+        http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
+      start-state="flow-start"
+        >
+
+    <action-state id="flow-start">
+        <evaluate expression="debugTask.startWith()"/>
+        <transition to="events"/>
+    </action-state>
+
+    <view-state id="events" view="events" model="eventForm">
+        <on-entry>
+            <set name="viewScope.eventForm" value="eventTask.getForm()"/>
+        </on-entry>
+        <on-render>
+            <set name="requestScope.events" value="eventTask.getEvents()"/>
+        </on-render>
+        <transition on="next" to="needsPayment">
+            <evaluate expression="eventTask.createOrder(viewScope.eventForm.id, viewScope.eventForm.ticketsNumber)"
+                      result="flowScope.orderId"/>
+        </transition>
+    </view-state>
+
+    <decision-state id="needsPayment">
+        <if test="paymentTask.needsPayment(flowScope.orderId)"
+            then="userLogin" else="enterName"/>
+    </decision-state>
+
+    <view-state id="userLogin" view="user-login" model="userForm">
+        <on-entry>
+            <set name="viewScope.userForm" value="userTask.getUserForm()"/>
+        </on-entry>
+        <transition on="existingUser" to="chooseTicketType"/>
+
+    </view-state>
+
+    <view-state id="enterName" view="user-name" model="userForm">
+        <on-entry>
+            <set name="viewScope.userForm" value="userTask.getUserForm()"/>
+        </on-entry>
+        <transition on="existingUser" to="chooseTicketType"/>
+    </view-state>
+
+    <action-state id="chooseTicketType">
+        <evaluate expression="eventTask.getEventType(flowScope.orderId)"/>
+        <transition on="CONFERENCE" to="events"/>
+        <transition on="JUG" to="enterName"/>
+    </action-state>
+    <end-state id="cancel"/>
+
+</flow>
