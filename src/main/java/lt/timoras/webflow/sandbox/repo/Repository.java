@@ -13,6 +13,7 @@ import java.util.Map;
 
 import static lt.timoras.webflow.sandbox.domain.Event.EventType.CONFERENCE;
 import static lt.timoras.webflow.sandbox.domain.Event.EventType.JUG;
+import static lt.timoras.webflow.sandbox.domain.Event.EventType.WORKSHOP;
 
 @Component
 public class Repository {
@@ -21,7 +22,8 @@ public class Repository {
     private Map<Long, Event> events = ImmutableMap.of(
             1L, new Event(1L, "GeeCon", CONFERENCE, new DateTime(2013, 4, 10, 19, 0)),
             2L, new Event(2L, "Jug14", JUG, new DateTime(2013, 4, 10, 19, 0)),
-            3L, new Event(3L, "Jug15", JUG, new DateTime(2013, 6, 8, 19, 0))
+            3L, new Event(3L, "Jug15", JUG, new DateTime(2013, 6, 8, 19, 0)),
+            4L, new Event(4L, "Spring webflow workshop", WORKSHOP, new DateTime(2013, 12, 8, 19, 0))
     );
 
     public List<Event> getEvents() {

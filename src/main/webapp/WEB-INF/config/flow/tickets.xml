@@ -35,7 +35,17 @@
             <set name="viewScope.userForm" value="userTask.getUserForm()"/>
         </on-entry>
         <transition on="existingUser" to="chooseTicketType"/>
+        <transition on="newUser" to="registerUser" validate="false"/>
+    </view-state>
 
+    <view-state id="registerUser" view="register-user" model="userRegistrationForm">
+        <on-entry>
+            <set name="viewScope.userRegistrationForm" value="userTask.getUserRegistrationForm()"/>
+        </on-entry>
+        <transition to="chooseTicketType" on="reg">
+
+            <set name="flashScope.regName" value="viewScope.userRegistrationForm.firstName"/>
+        </transition>
     </view-state>
 
     <view-state id="enterName" view="user-name" model="userForm">
@@ -47,9 +57,20 @@
 
     <action-state id="chooseTicketType">
         <evaluate expression="eventTask.getEventType(flowScope.orderId)"/>
-        <transition on="CONFERENCE" to="events"/>
-        <transition on="JUG" to="enterName"/>
+        <transition on="CONFERENCE" to="t-shirts"/>
+        <transition on="WORKSHOP" to="experience"/>
+        <transition on="JUG" to="greetings"/>
     </action-state>
+
+    <view-state id="t-shirts" view="choose-t-shirts">
+        <transition on="ok" to="greetings"/>
+    </view-state>
+
+    <view-state id="experience" view="experience">
+        <transition on="ok" to="greetings"/>
+    </view-state>
+
+    <end-state id="greetings" view="greetings" />
     <end-state id="cancel"/>
 
 </flow>

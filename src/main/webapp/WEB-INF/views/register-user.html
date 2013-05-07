@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+<form class="form-horizontal" method="POST" th:object="${userRegistrationForm}">
+
+    <div class="control-group">
+        <label class="control-label" for="firstName">First name</label>
+        <div class="controls">
+            <input id="firstName" th:field="*{firstName}" type="text"/>
+            <div th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></div>
+        </div>
+
+        <label class="control-label" for="lastName">Last name</label>
+        <div class="controls">
+            <input id="lastName" th:field="*{lastName}" type="text"/>
+            <div th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></div>
+        </div>
+
+        <label class="control-label" for="userName">User name</label>
+        <div class="controls">
+            <input id="userName" th:field="*{userName}" type="text"/>
+            <div th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"></div>
+        </div>
+
+        <label class="control-label" for="password">Password</label>
+        <div class="controls">
+            <input id="password" th:field="*{password}" type="text"/>
+            <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+        </div>
+
+        <label class="control-label" for="creditCardNumber">Credit card number</label>
+        <div class="controls">
+            <input id="creditCardNumber" th:field="*{creditCardNumber}" type="text"/>
+            <div th:if="${#fields.hasErrors('creditCardNumber')}" th:errors="*{creditCardNumber}"></div>
+        </div>
+
+        <div class="controls">
+            <button type="submit" name="_eventId_reg" class="btn">Submit</button>
+        </div>
+    </div>
+</form>
+</body>
+</html>
