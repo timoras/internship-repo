@@ -40,11 +40,6 @@
     </servlet>
 
     <!-- Map all *.spring requests to the DispatcherServlet for handling -->
-    <servlet-mapping>
-        <servlet-name>Spring MVC Dispatcher Servlet</servlet-name>
-        <url-pattern>/webflow/*</url-pattern>
-    </servlet-mapping>
-
     <filter>
         <filter-name>sitemesh</filter-name>
         <filter-class>lt.timoras.webflow.sandbox.filter.SWFSiteMeshFilter</filter-class>
@@ -56,5 +51,13 @@
 
 
     <!--start here-->
+    <servlet>
+        <servlet-name>enterName</servlet-name>
+        <servlet-class>lt.timoras.servlets.EnterNameServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>enterName</servlet-name>
+        <url-pattern>/name</url-pattern>
+    </servlet-mapping>
 
 </web-app>
