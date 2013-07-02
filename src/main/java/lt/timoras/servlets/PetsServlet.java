@@ -14,5 +14,4 @@ public class PetsServlet extends HttpServlet {
         req.setAttribute("pets", Lists.newArrayList("dog", "cat", "goldem fish", "hamster"));
         req.getRequestDispatcher("/thymeleaf/pets").forward(req, resp);
     }
-
 }
