@@ -42,7 +42,7 @@
     <!-- Map all *.spring requests to the DispatcherServlet for handling -->
     <servlet-mapping>
         <servlet-name>Spring MVC Dispatcher Servlet</servlet-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/webflow/*</url-pattern>
     </servlet-mapping>
 
     <filter>
@@ -51,8 +51,10 @@
     </filter>
     <filter-mapping>
         <filter-name>sitemesh</filter-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/webflow/**</url-pattern>
     </filter-mapping>
 
+
+    <!--start here-->
 
 </web-app>
