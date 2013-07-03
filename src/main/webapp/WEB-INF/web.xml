@@ -65,13 +65,4 @@
         <url-pattern>/pets</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>thymeleaf</servlet-name>
-        <servlet-class>lt.timoras.servlets.ThymeleafServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>thymeleaf</servlet-name>
-        <url-pattern>/thymeleaf/*</url-pattern>
-    </servlet-mapping>
-
 </web-app>
