@@ -51,6 +51,14 @@
 
 
     <!--start here-->
+    <servlet>
+        <servlet-name>petsServlet</servlet-name>
+        <servlet-class>lt.timoras.servlets.PetsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>petsServlet</servlet-name>
+        <url-pattern>/pets</url-pattern>
+    </servlet-mapping>
 
     <servlet>
         <servlet-name>enterName</servlet-name>
