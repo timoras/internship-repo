@@ -5,7 +5,14 @@
     <title>Enter name</title>
 </head>
 <body>
-    Hello ${param.enterName}
+
+<c:forEach items="${items}" var="aaaa">
+     dsad
+         ${aaaa}
+         x;ljdfsjdfshdhfjas
+</c:forEach>
+
+    Hello ${param.enterName}  atributas ${enterName}
     <form>
         <label>
             Enter name: <input type="text" name="enterName"/>
