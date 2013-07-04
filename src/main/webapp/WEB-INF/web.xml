@@ -79,4 +79,13 @@
         <location>/error.jsp</location>
     </error-page>
 
+    <servlet>
+        <servlet-name>thymeleaf</servlet-name>
+        <servlet-class>lt.timoras.servlets.ThymeleafServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>thymeleaf</servlet-name>
+        <url-pattern>/thymeleaf/*   </url-pattern>
+    </servlet-mapping>
+
 </web-app>
