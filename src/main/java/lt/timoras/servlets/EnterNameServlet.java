@@ -9,8 +9,8 @@ import java.io.IOException;
 public class EnterNameServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println(req.getParameter("enterName"));
-//        req.setAttribute("enterName", "enterName");
+        System.out.println();
+        req.setAttribute("enterName", req.getParameter("enterName"));
         req.getRequestDispatcher("/WEB-INF/jspviews/name.jsp").forward(req, resp);
     }
 

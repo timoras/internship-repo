@@ -88,4 +88,13 @@
         <url-pattern>/thymeleaf/*   </url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>HelloServlet</servlet-name>
+        <servlet-class>lt.timoras.servlets.HelloServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloServlet</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+
 </web-app>
